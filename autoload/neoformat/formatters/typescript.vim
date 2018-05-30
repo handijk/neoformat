@@ -24,3 +24,4 @@ function! neoformat#formatters#typescript#tslint() abort
         \ 'args': ['--fix', '--config', './tslint.json'],
         \ 'replace': 1
         \ }
+endfunction
