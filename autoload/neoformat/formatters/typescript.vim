@@ -1,5 +1,5 @@
 function! neoformat#formatters#typescript#enabled() abort
-   return ['tsfmt', 'prettier']
+    return ['tsfmt', 'prettier', 'tslint']
 endfunction
 
 function! neoformat#formatters#typescript#tsfmt() abort
@@ -17,3 +17,10 @@ function! neoformat#formatters#typescript#prettier() abort
         \ 'stdin': 1
         \ }
 endfunction
+
+function! neoformat#formatters#typescript#tslint() abort
+    return {
+        \ 'exe': 'tslint',
+        \ 'args': ['--fix', '--config', './tslint.json'],
+        \ 'replace': 1
+        \ }
